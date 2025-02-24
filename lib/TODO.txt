@@ -1,0 +1,28 @@
+TODO List for Pokedex Flutter Project
+
+1. Consultar API:
+    - [X] Usa http para realizar una petición GET a https://pokeapi.co/api/v2/pokemon?limit=20.
+    - [X] Extrae los nombres y las URLs de las imágenes de los primeros 20 Pokémon. (Yo 151 1a gen) 
+
+2. Interfaz gráfica:
+    - [X] Muestra la lista de Pokémon en una ListView. 
+    - [X] Cada Pokémon debe mostrarse con su nombre y su imagen correspondiente. 
+
+3. Estructura del código:
+    - [X] Crea una clase Pokemon para representar cada Pokémon.
+    - [X] Implementa una función asíncrona para obtener los datos desde la API.
+    - [X] Usa setState() para actualizar la UI cuando se obtengan los datos.
+
+Extras:
+    - [X] Un CircularProgressIndicator mientras se cargan los datos.(https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Pok%C3%A9_Ball_icon.svg/640px-Pok%C3%A9_Ball_icon.svg.png)
+    - [X] Manejo de errores si la API no responde. 
+    - [ ] Un RefreshIndicator para recargar la lista deslizando hacia abajo. 
+    - [X] Carga más Pokémon y gestiona los datos.
+    - [ ] Otras funcionalidades extra que consideres interesantes, como una búsqueda por nombre, etc.
+
+Entregables:
+    - [ ] Subir el código a un repositorio en GitHub.
+    - [ ] Compartir el enlace del repositorio.
+    - [ ] Fecha de entrega: 25/02/25.
+
+ 
