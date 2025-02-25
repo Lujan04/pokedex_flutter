@@ -14,8 +14,7 @@ class PokedexItemWidget extends StatelessWidget {
         onTap: () => Navigator.pushNamed(
           context,
           '/pokemon',
-          arguments:
-              pokemon.id, // Pasamos el ID del Pokémon a la pantalla de detalles
+          arguments: pokemon.id,
         ),
         child: Container(
           decoration: BoxDecoration(
@@ -44,7 +43,7 @@ class PokedexItemWidget extends StatelessWidget {
                   radius: 35,
                   backgroundColor: Colors.black,
                   child: Image.network(
-                    pokemon.sprite, // Usa la imagen del Pokémon
+                    pokemon.sprite,
                     errorBuilder: (context, error, stackTrace) {
                       return const Icon(Icons.error, color: Colors.red);
                     },
@@ -52,7 +51,7 @@ class PokedexItemWidget extends StatelessWidget {
                 ),
                 const SizedBox(width: 10),
                 Text(
-                  pokemon.name.toUpperCase(), // Usa el nombre real del Pokémon
+                  pokemon.name.toUpperCase(),
                   style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -62,7 +61,7 @@ class PokedexItemWidget extends StatelessWidget {
                 ),
                 const Spacer(),
                 Text(
-                  "#${pokemon.id.toString().padLeft(3, '0')}", // Formatea el ID
+                  "#${pokemon.id.toString().padLeft(3, '0')}",
                   style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,

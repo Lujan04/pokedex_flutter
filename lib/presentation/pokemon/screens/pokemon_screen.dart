@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pokedex_flutter/API/poke_api_service.dart';
 import 'package:pokedex_flutter/pokemon.dart';
-import 'package:pokedex_flutter/presentation/pokemon/widgets/evos_widget.dart';
 import 'package:pokedex_flutter/presentation/pokemon/widgets/name_widget.dart';
 import 'package:pokedex_flutter/presentation/pokemon/widgets/sprite_widget.dart';
 import 'package:pokedex_flutter/presentation/pokemon/widgets/stats_widget.dart';

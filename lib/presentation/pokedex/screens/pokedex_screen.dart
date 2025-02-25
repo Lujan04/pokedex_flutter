@@ -26,24 +26,21 @@ class _PokedexScreenState extends State<PokedexScreen> {
     try {
       List<Pokemon> fetchedPokemon = [];
       for (int i = 1; i <= 151; i++) {
-        // Aquí cambiamos para obtener los primeros 151 Pokémon
         final pokemon = await apiService.fetchPokemon(i);
         fetchedPokemon.add(pokemon);
-        print(
-            'Fetched Pokémon: ${pokemon.name}'); // Agregar print para depuración
+        print('Fetched Pokémon: ${pokemon.name}');
       }
       setState(() {
         pokemonList = fetchedPokemon;
         isLoading = false;
       });
-      print(
-          'Pokémon list loaded successfully'); // Agregar print para depuración
+      print('Pokémon list loaded successfully');
     } catch (e) {
       setState(() {
         errorMessage = 'Error al cargar la Pokédex: $e';
         isLoading = false;
       });
-      print('Error: $e'); // Agregar print para depuración
+      print('Error: $e');
     }
   }
 

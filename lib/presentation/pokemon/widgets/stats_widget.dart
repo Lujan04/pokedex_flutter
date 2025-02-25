@@ -43,7 +43,6 @@ class StatsWidget extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Información de Tipos, Altura y Habilidades
               Wrap(
                 spacing: 10,
                 runSpacing: 10,
@@ -55,8 +54,6 @@ class StatsWidget extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 20),
-
-              // Gráfico de estadísticas
               SizedBox(
                 height: 250,
                 child: SfCartesianChart(
@@ -108,12 +105,12 @@ class StatsWidget extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
-            color: Colors.grey.withOpacity(0.5),
+            color: Colors.grey,
             spreadRadius: 2,
             blurRadius: 5,
-            offset: const Offset(0, 3),
+            offset: Offset(0, 3),
           ),
         ],
       ),

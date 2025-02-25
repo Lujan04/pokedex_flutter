@@ -17,8 +17,7 @@ class SpriteWidget extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(15),
         child: AspectRatio(
-          aspectRatio:
-              1, // Mantiene el cuadrado sin importar el tamaño de la pantalla
+          aspectRatio: 1,
           child: CachedNetworkImage(
             imageUrl: imageUrl,
             fit: BoxFit.contain, // Evita distorsión

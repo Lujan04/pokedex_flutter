@@ -27,11 +27,11 @@ class Pokemon {
     return Pokemon(
       id: json['id'],
       name: json['name'],
-      description: "", // Se llenará con otra petición a species/{id}
+      description: "",
       types:
           List<String>.from(json['types'].map((type) => type['type']['name'])),
-      height: json['height'] / 10.0, // Convertir a metros
-      weight: json['weight'] / 10.0, // Convertir a kilogramos
+      height: json['height'] / 10.0,
+      weight: json['weight'] / 10.0,
       abilities: List<String>.from(
           json['abilities'].map((ability) => ability['ability']['name'])),
       stats: Map<String, int>.fromEntries(
@@ -40,7 +40,7 @@ class Pokemon {
               MapEntry<String, int>(stat['stat']['name'], stat['base_stat']),
         ),
       ),
-      evolutions: [], // Se llenará después
+      evolutions: [],
       sprite: json['sprites']['front_default'] ?? "",
     );
   }
