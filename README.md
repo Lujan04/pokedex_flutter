@@ -23,7 +23,34 @@ El proyecto utiliza los siguientes paquetes de [pub.dev](https://pub.dev):
 - **[flutter_local_notifications](https://pub.dev/packages/flutter_local_notifications)**: Para mostrar notificaciones al añadir Pokémon como favoritos.
 
 ## Estructura del Proyecto
+## `lib/`
+- **`main.dart`**: Punto de entrada.
+- **`Pokemon.dart`**: Clase y métodos de Pokémon.
 
-El proyecto está organizado de la siguiente manera:
-lib/ ├── main.dart # Punto de entrada de la aplicación. ├── Pokemon.dart # Clase y métodos relacionados con los Pokémon. ├── Notifications/ # Servicios de notificaciones. │ └── favoritePokemon.dart # Notificaciones al añadir Pokémon favoritos. ├── API/ # Servicios de API. │ └── poke_api_service.dart # Peticiones a la PokeAPI. ├── Presentation/ # Lógica de presentación. │ ├── Pokedex/ # Pantallas y widgets de la Pokédex. │ │ ├── Screens/ # Pantallas relacionadas con la Pokédex. │ │ │ └── pokedex_screen.dart # Pantalla principal de la Pokédex. │ │ └── Widgets/ # Widgets relacionados con la Pokédex. │ │ ├── pokedex_item.dart # Widget para mostrar un Pokémon en la lista. │ │ ├── barraBusqueda.dart # Widget para buscar Pokémon. │ │ ├── pokeballCargando.dart # Widget de carga. │ │ └── tipoFiltro.dart # Widget para filtrar Pokémon por tipo. │ ├── Pokemon/ # Pantallas y widgets de detalles de Pokémon. │ │ ├── Screens/ # Pantallas relacionadas con los detalles de los Pokémon. │ │ │ └── pokemon_screen.dart # Pantalla de detalles de un Pokémon. │ │ └── Widgets/ # Widgets para mostrar detalles de Pokémon. │ │ ├── evos_widget.dart # Widget para mostrar evoluciones. │ │ ├── name_widget.dart # Widget para mostrar el nombre. │ │ ├── stats_widget.dart # Widget para mostrar estadísticas. │ │ └── sprite_widget.dart # Widget para mostrar el sprite.
+### `Notifications/`
+- **`favoritePokemon.dart`**: Notificaciones de favoritos.
+
+### `API/`
+- **`poke_api_service.dart`**: Peticiones a la PokeAPI.
+
+### `Presentation/`
+
+#### `Pokedex/`
+- **`Screens/`**
+  - **`pokedex_screen.dart`**: Pantalla principal de la Pokédex.
+- **`Widgets/`**
+  - **`pokedex_item.dart`**: Pokémon en la lista.
+  - **`barraBusqueda.dart`**: Barra de búsqueda.
+  - **`pokeballCargando.dart`**: Widget de carga.
+  - **`tipoFiltro.dart`**: Filtro por tipo.
+
+#### `Pokemon/`
+- **`Screens/`**
+  - **`pokemon_screen.dart`**: Detalles del Pokémon.
+- **`Widgets/`**
+  - **`evos_widget.dart`**: Evoluciones.
+  - **`name_widget.dart`**: Nombre.
+  - **`stats_widget.dart`**: Estadísticas.
+  - **`sprite_widget.dart`**: Sprite.
+
 
