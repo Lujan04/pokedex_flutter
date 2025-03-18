@@ -1,13 +1,17 @@
 # Pokedex Flutter
 
-Pokedex Flutter es una aplicación móvil desarrollada en Flutter que actúa como una Pokédex interactiva para los Pokémon de la primera generación. La aplicación obtiene los datos de una API de Pokémon y los presenta de manera visualmente atractiva y fácil de navegar.
+Pokedex Flutter es una aplicación móvil desarrollada en Flutter que actúa como una Pokédex interactiva para los Pokémon. La aplicación obtiene los datos de una API de Pokémon y los presenta de manera visualmente atractiva y fácil de navegar.
 
 ## Características
 
-- Visualiza una lista de todos los Pokémon de la primera generación junto con sus imágenes.
+- Visualiza una lista de todos los Pokémonjunto con sus imágenes permitiendo alternar entre formato lista o cuadrícula.
 - Detalles de cada Pokémon, incluidos sus stats, habilidades, y más.
 - Gráficos interactivos que muestran las estadísticas del Pokémon.
 - Información sobre cada Pokémon, como su ID, altura, peso y tipos.
+- Funcionalidad que permite mostrar los detalles de un Pokémon aleatorio.
+- Tema claro y oscuro.
+- Sección de Pokémons favoritos.
+- Ordenar por nombre o por numero en la Pokedex.
 
 ## Paquetes Utilizados
 
@@ -15,8 +19,7 @@ Este proyecto hace uso de los siguientes paquetes de pub.dev:
 
 - **http**: Para hacer peticiones HTTP a la PokeAPI.
 - **cached_network_image**: Para cargar y almacenar imágenes de manera eficiente con caché.
-- **fl_chart**: Para crear gráficos visuales que muestran las estadísticas de los Pokémon.
-- **intl**: Para manejar la internacionalización y localización de la aplicación.
+- **syncfusion_flutter_charts**: Para crear gráficos visuales que muestran las estadísticas de los Pokémon.
 
 ## Estructura del Proyecto
 
