@@ -1,5 +1,6 @@
 TODO List for Pokedex Flutter Project
 
+ --------------------------------------------------ENTREGA 1----------------------------------------------------------------------------
 1. Consultar API:
     - [X] Usa http para realizar una petición GET a https://pokeapi.co/api/v2/pokemon?limit=20.
     - [X] Extrae los nombres y las URLs de las imágenes de los primeros 20 Pokémon. (Yo 151 1a gen) 
@@ -21,8 +22,38 @@ Extras:
     - [ ] Otras funcionalidades extra que consideres interesantes, como una búsqueda por nombre, etc.
 
 Entregables:
-    - [ ] Subir el código a un repositorio en GitHub.
-    - [ ] Compartir el enlace del repositorio.
-    - [ ] Fecha de entrega: 25/02/25.
+    - [X] Subir el código a un repositorio en GitHub.
+    - [X] Compartir el enlace del repositorio.
+    - [X] Fecha de entrega: 25/02/25.
 
- 
+ --------------------------------------------------ENTREGA 2----------------------------------------------------------------------------
+
+1 --> Interfaz
+    - [X] Sombras y border radius en los componentes
+    - [x] Tipografia custom
+    - [x] Animacion cargar pokemons
+    - [x] Detalles de cada pokemon
+    - [x] Modo oscuro ThemeData
+    - [x] Vista lista / vista grid
+    - [x] Cambiar color por tipo
+
+2 --> Features 
+    - [x] Buscador por nombre
+    - [x] Cargar todos los pokemons de la API 
+    - [x] Seccion de favoritos
+    - [x] Notificacion cada vez que guardas un pokemon como favoritos
+    - [x] Filtro por tipos
+    - [x] Ordenar por nombre o numero de la pokedex
+    - [x] Mostrar un pokemon aleatorio
+    - [x] Mostrar un mensaje si la API falla
+
+3 --> Extras
+    - [] Carga mas eficiente de la API
+    - [] Gurdar los pokemons en una bbdd local
+    - [X] Animaciones avanzadas en pokemons
+    - [X] Animacion de carga
+    - [] Temas personalizados
+    - [] Comparador de pokemons
+
+
+

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class NameWidget extends StatelessWidget {
   final String name;
@@ -14,35 +15,52 @@ class NameWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Text(
-          name.toUpperCase(),
-          style: const TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: Colors.black,
-          ),
-        ),
-        Text(
-          "#${id.toString().padLeft(3, '0')}",
-          style: const TextStyle(
-            fontSize: 20,
-            color: Colors.black,
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Text(
-            description,
-            textAlign: TextAlign.center,
-            style: const TextStyle(
-              fontSize: 16,
-              color: Colors.black,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+      child: Container(
+        decoration: BoxDecoration(
+            border: Border.all(color: Theme.of(context).colorScheme.secondary, width: 1),
+            color: Theme.of(context).primaryColor,
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: const [
+              BoxShadow(
+                  color: Colors.black,
+                  spreadRadius: 3,
+                  blurRadius: 10,
+                  offset: Offset(0, 3)),
+            ]),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  name.toUpperCase(),
+                  style: Theme.of(context).textTheme.headlineLarge,
+                ),
+                SizedBox(width: 10),
+                Text(
+                  "#${id.toString().padLeft(3, '0')}",
+                  style: Theme.of(context).textTheme.headlineLarge,
+                ),
+              ],
             ),
-          ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                description.isNotEmpty
+                    ? description
+                    : "Error en la descripcipon",
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }

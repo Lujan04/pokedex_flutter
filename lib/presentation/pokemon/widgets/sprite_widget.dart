@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:pokedex_flutter/presentation/pokedex/widgets/pokeballCargando.dart';
 
 class SpriteWidget extends StatelessWidget {
   final String imageUrl;
@@ -10,9 +11,17 @@ class SpriteWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.grey[100],
-        border: Border.all(color: Colors.black, width: 1),
+        color: Theme.of(context).primaryColor,
+        border: Border.all(color: Theme.of(context).colorScheme.secondary,  width: 1),
         borderRadius: BorderRadius.circular(15),
+        boxShadow: const[
+          BoxShadow(
+            color: Colors.black,
+            spreadRadius: 3,
+            blurRadius: 10,
+            offset:  Offset(0, 3)
+          )
+        ]
       ),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(15),
@@ -20,12 +29,10 @@ class SpriteWidget extends StatelessWidget {
           aspectRatio: 1,
           child: CachedNetworkImage(
             imageUrl: imageUrl,
-            fit: BoxFit.contain, // Evita distorsión
-            placeholder: (context, url) => const Center(
-              child: CircularProgressIndicator(
-                color: Colors.blueAccent,
-              ),
-            ),
+            fit: BoxFit.contain, 
+            placeholder: (context, url) => const Center( child: 
+                     PokeballCargando()
+                    ),
             errorWidget: (context, url, error) => const Center(
               child: Icon(
                 Icons.broken_image,

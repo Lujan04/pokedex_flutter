@@ -7,8 +7,8 @@ class Pokemon {
   final double weight;
   final List<String> abilities;
   final Map<String, int> stats;
-  final List<String> evolutions;
   final String sprite;
+  bool isFavorite = false;
 
   Pokemon({
     required this.id,
@@ -19,8 +19,8 @@ class Pokemon {
     required this.weight,
     required this.abilities,
     required this.stats,
-    required this.evolutions,
     required this.sprite,
+    this.isFavorite = false,
   });
 
   factory Pokemon.fromJson(Map<String, dynamic> json) {
@@ -40,7 +40,6 @@ class Pokemon {
               MapEntry<String, int>(stat['stat']['name'], stat['base_stat']),
         ),
       ),
-      evolutions: [],
       sprite: json['sprites']['front_default'] ?? "",
     );
   }

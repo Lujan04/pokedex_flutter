@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ChartData {
   const ChartData(this.x, this.y);
@@ -30,13 +31,18 @@ class StatsWidget extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
       child: DecoratedBox(
         decoration: BoxDecoration(
-          gradient: const LinearGradient(
-            colors: [Color(0xFFFFF9C4), Color(0xFFFFF176)],
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-          ),
-          border: Border.all(color: Colors.brown, width: 2),
+          color: Theme.of(context).colorScheme.primary,
+          border: Border.all(
+              color: Theme.of(context).colorScheme.secondary, width: 2),
           borderRadius: const BorderRadius.all(Radius.circular(20)),
+          boxShadow: const [
+            BoxShadow(
+              color: Colors.black,
+              spreadRadius: 3,
+              blurRadius: 10,
+              offset: Offset(0, 3),
+            ),
+          ],
         ),
         child: Padding(
           padding: const EdgeInsets.all(12.0),
@@ -47,29 +53,31 @@ class StatsWidget extends StatelessWidget {
                 spacing: 10,
                 runSpacing: 10,
                 children: [
-                  _infoColumn("Tipos", types.join(", ")),
-                  _infoColumn("Altura", "${height.toStringAsFixed(1)} m"),
-                  _infoColumn("Peso", "${weight.toStringAsFixed(1)} kg"),
-                  _infoColumn("Habilidades", abilities.join(", ")),
+                  _infoColumn("Tipos", types.join(", "), context),
+                  _infoColumn(
+                      "Altura", "${height.toStringAsFixed(1)} m", context),
+                  _infoColumn(
+                      "Peso", "${weight.toStringAsFixed(1)} kg", context),
+                  _infoColumn("Habilidades", abilities.join(", "), context),
                 ],
               ),
               const SizedBox(height: 20),
               SizedBox(
                 height: 250,
                 child: SfCartesianChart(
-                  primaryXAxis: const CategoryAxis(
-                    labelStyle: TextStyle(
-                      fontSize: 15,
-                      color: Color(0xFF0D47A1),
+                  primaryXAxis: CategoryAxis(
+                    labelStyle: GoogleFonts.orbitron(
+                      fontSize: 12,
+                      fontWeight: FontWeight.bold,
+                      color: const Color(0xFF0D47A1),
                     ),
-                    majorGridLines: MajorGridLines(width: 0),
+                    majorGridLines: const MajorGridLines(width: 0),
                   ),
-                  primaryYAxis: const NumericAxis(
-                    labelStyle: TextStyle(
-                      fontSize: 15,
-                      color: Color(0xFF0D47A1),
+                  primaryYAxis: NumericAxis(
+                    labelStyle: GoogleFonts.orbitron(
+                      fontSize: 10,
+                      color: const Color(0xFF0D47A1),
                     ),
-                    majorGridLines: MajorGridLines(width: 0),
                   ),
                   series: <CartesianSeries>[
                     BarSeries<ChartData, String>(
@@ -79,11 +87,11 @@ class StatsWidget extends StatelessWidget {
                           .toList(),
                       xValueMapper: (ChartData data, _) => data.x,
                       yValueMapper: (ChartData data, _) => data.y,
-                      color: Colors.orange,
+                      color: Theme.of(context).colorScheme.secondary,
                       borderRadius: BorderRadius.circular(10),
-                      dataLabelSettings: const DataLabelSettings(
+                      dataLabelSettings: DataLabelSettings(
                         isVisible: true,
-                        textStyle: TextStyle(
+                        textStyle: GoogleFonts.orbitron(
                           fontSize: 12,
                           color: Colors.black,
                         ),
@@ -99,11 +107,11 @@ class StatsWidget extends StatelessWidget {
     );
   }
 
-  Widget _infoColumn(String title, String value) {
+  Widget _infoColumn(String title, String value, BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(8.0),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: Theme.of(context).colorScheme.primary,
         borderRadius: BorderRadius.circular(10),
         boxShadow: const [
           BoxShadow(
@@ -119,18 +127,15 @@ class StatsWidget extends StatelessWidget {
         children: [
           Text(
             title,
-            style: const TextStyle(
-              fontSize: 16,
+            style: GoogleFonts.orbitron(
+              fontSize: 14,
               fontWeight: FontWeight.bold,
-              color: Colors.black,
+              color: Color(0xFF0D47A1),
             ),
           ),
           Text(
             value,
-            style: const TextStyle(
-              fontSize: 14,
-              color: Colors.black,
-            ),
+            style: TextStyle(color: Color.fromARGB(255, 79, 148, 252)),
           ),
         ],
       ),
